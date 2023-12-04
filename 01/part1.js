@@ -11,13 +11,13 @@ function getSum(input) {
         let units = 0;
         for (let i=0; i<item.length; i++) {
             if (item.charCodeAt(i) >= 48 && item.charCodeAt(i) <= 57) {
-                tens = Number(item[i]) * 10;
+                tens = parseInt(item[i]) * 10;
                 break;
             }
         }
-        for (let j=item.length-1; j>0; j--) {
+        for (let j=item.length-1; j>=0; j--) {
             if (item.charCodeAt(j) >= 48 && item.charCodeAt(j) <= 57) {
-                units = Number(item[j]);
+                units = parseInt(item[j]);
                 break;
             }
         }
