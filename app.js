@@ -39,5 +39,5 @@ function getSum(input) {
     return result
 }
 
-// console.log(getSum(modifyInput(input)))
-console.log(modifyInput(["eightwothree"]))
+console.log(getSum(input))
+// console.log(modifyInput(["eightwothree"]))
