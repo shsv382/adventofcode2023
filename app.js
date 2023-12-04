@@ -4,6 +4,18 @@ let input = [];
 
 fs.readFileSync("input.txt", "utf8").toString().trim().split('\n').map(item => input.push(item.trim()));
 
+const dict = [null, "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+function modifyInput(input) {
+    let newInput = input.map(item => {
+        dict.forEach((num, i) => {
+            if (num) item = item.split(num).join(i)
+        })
+        return item
+    })
+    return newInput
+}
+
 function getSum(input) {
     let result = 0;
     input.map((item) => {
@@ -21,9 +33,11 @@ function getSum(input) {
                 break;
             }
         }
+        console.log(tens + units)
         result += tens + units;
     })
     return result
 }
 
-console.log(getSum(input))
+// console.log(getSum(modifyInput(input)))
+console.log(modifyInput(["eightwothree"]))
