@@ -8,10 +8,11 @@ const dict = [null, "one", "two", "three", "four", "five", "six", "seven", "eigh
 
 function modifyInput(input) {
     let newInput = input.map(item => {
+        let modifiedString = [];
         dict.forEach((num, i) => {
-            if (num) item = item.split(num).join(i)
+            if (!!i) modifiedString[item.indexOf(num)] = i;
         })
-        return item
+        return modifiedString.join("")
     })
     return newInput
 }
@@ -39,5 +40,5 @@ function getSum(input) {
     return result
 }
 
-console.log(getSum(input))
-// console.log(modifyInput(["eightwothree"]))
+// console.log(getSum(input))
+console.log(modifyInput(["eightwothree"]))
